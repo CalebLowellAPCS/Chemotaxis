@@ -17,20 +17,19 @@ public class Chemotaxis extends PApplet {
  int haru;
  int natsu;
  int aki;
- Chemotaxis [] fuyu;
+ Bacteria[] fuyu;
  //declare bacteria variables here 
 
  public void setup()   
  {     
- 	haru = 0;
- 	natsu = 0;
- 	aki = color(255, 0, 0);
 
  	size(300,300);
  	background(0);
- 	fuyu = new Chemotaxis[1];
- 	for(int i = 0; i <= fuyu.length; i++){
- 		fuyu[i] = new Chemotaxis();
+ 	fuyu = new Bacteria[10];
+
+ 	for(int i = 0; i < fuyu.length; i++){
+ 		
+ 		fuyu[i] = new Bacteria();
  	}
 
  	//initialize bacteria variables here   
@@ -38,19 +37,24 @@ public class Chemotaxis extends PApplet {
 
  public void draw()   
  {   
+ 	background(0, 0, 0);
+
+ 	for(int i = 0; i < fuyu.length; i++){
  	
- 	for(int i = 0; i <= fuyu.length; i++){
- 	
- 	fuyu[i].move();
  	fuyu[i].show();
+ 	fuyu[i].move();
+
  	}
 
  	//move and show the bacteria   
  }  
  
- class Chemotaxis    
+ class Bacteria    
  {     
- 	Chemotaxis(int x, int y, int c)
+ 
+ int x,y,c;
+
+  Bacteria ()
  	{
  		haru = x;
  		natsu = y;
@@ -64,8 +68,12 @@ public class Chemotaxis extends PApplet {
 	}
 
 	public void move(){
-	
-		x = x + (int)(Math.random()*3 - 1);
+		
+		x = 150;
+		y = 150;
+
+		x = x + (int)(Math.random()*3) - 1;
+		y = y + (int)(Math.random()*3) - 1;
 	}  
  }    
 
