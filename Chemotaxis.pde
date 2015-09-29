@@ -1,15 +1,14 @@
  int haru;
  int natsu;
- int aki;
+ color aki;
  Bacteria[] fuyu;
  //declare bacteria variables here 
 
  void setup()   
  {     
-
+ 	frameRate(30);
  	size(300,300);
- 	background(0);
- 	fuyu = new Bacteria[10];
+ 	fuyu = new Bacteria[77];
 
  	for(int i = 0; i < fuyu.length; i++){
  		
@@ -19,45 +18,67 @@
  	//initialize bacteria variables here   
  }   
 
+ void Kaibutsu()
+ {
+
+ 	fill(255, 0, 0);
+ 	ellipse(mouseX, mouseY, 10, 10);
+ }
+
  void draw()   
  {   
- 	background(0, 0, 0);
+ 	background(188, 142, 16);
 
- 	for(int i = 0; i < fuyu.length; i++){
- 	
- 	fuyu[i].show();
- 	fuyu[i].move();
+ 	Kaibutsu();
 
- 	}
+	
+	for(int i = 0; i < fuyu.length; i++){
 
- 	//move and show the bacteria   
- }  
+ 		fuyu[i].show();
+ 		fuyu[i].move();
+
+	}
  
+ }
+
  class Bacteria    
  {     
  
  int x,y,c;
 
-  Bacteria ()
- 	{
+  Bacteria()
+    {
+
  		haru = x;
  		natsu = y;
  		aki = c;
+ 		x = 150;
+		y = 150;
+		c = color(192, 192, 192);
  	}
  	
- 	void show() {
+ 	void show()
+ 	{
 
-		fill(0, 255, 0);
+		fill(192, 192, 192);
+		noStroke();
 		ellipse(x, y, 10, 10);
+
+		if ((get(x + 11, y + 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(192, 192, 192)))
+		{
+			
+			x = 9000;
+			y = 9000;
+		}
+
 	}
 
-	void move(){
+	void move()
+	{
 		
-		x = 150;
-		y = 150;
+		x += (int)(Math.random()*3) - 1;
 
-		x = x + (int)(Math.random()*3) - 1;
-		y = y + (int)(Math.random()*3) - 1;
+		y += (int)(Math.random()*3) - 1;
 	}  
- }    
 
+ }
