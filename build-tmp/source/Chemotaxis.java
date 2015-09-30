@@ -76,29 +76,29 @@ public class Chemotaxis extends PApplet {
  	public void show()
  	{
 
-		fill(192, 192, 192);
+		fill(c);
 		noStroke();
 		ellipse(x, y, 10, 10);
 
-		if ((get(x + 11, y + 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(192, 192, 192)))
+		if ((get(x + 11, y + 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(c)))
 		{
 			
 			x = 9000;
 			y = 9000;
 		}
-		if ((get(x + 11, y - 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(192, 192, 192)))
+		if ((get(x + 11, y - 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(c)))
 		{
 			
 			x = 9000;
 			y = 9000;
 		}
-		if ((get(x - 11, y + 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(192, 192, 192)))
+		if ((get(x - 11, y + 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(c)))
 		{
 			
 			x = 9000;
 			y = 9000;
 		}
-		if ((get(x - 11, y - 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(192, 192, 192)))
+		if ((get(x - 11, y - 11) != color(188, 142, 16))  && (get(x + 11, y + 11) != color(c)))
 		{
 			
 			x = 9000;
